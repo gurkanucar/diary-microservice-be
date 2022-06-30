@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: diary_mysql
+      MYSQL_PASSWORD: 1234
+    ports:
+      - 3307:3306
+
+  user-microservice:
+    image: user-microservice
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
+    depends_on:
+      - mysqldb
+    restart: always
