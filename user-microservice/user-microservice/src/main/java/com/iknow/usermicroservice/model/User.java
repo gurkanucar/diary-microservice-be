@@ -66,5 +66,7 @@ public class User implements Serializable {
 
     private boolean isActive;
 
+    private String profileImageUrl;
+
 
 }
