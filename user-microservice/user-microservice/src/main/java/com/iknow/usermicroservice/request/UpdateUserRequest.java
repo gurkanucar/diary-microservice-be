@@ -1,53 +1,48 @@
 package com.iknow.usermicroservice.request;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class RegisterUserRequest {
+@Data
+public class UpdateUserRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(unique = true)
+    @NotNull
     @Size(max = 50, min = 3)
     private String username;
 
-    @NotEmpty
-    @Size(max = 255)
+    @NotNull
     @Email
     private String email;
 
-    @NotEmpty
+
     @NotNull
-    @Size(max = 50, min = 3)
+    @NotBlank
     private String name;
 
-    @NotEmpty
     @NotNull
-    @Size(max = 50, min = 3)
+    @NotBlank
     private String surname;
 
-    @NotEmpty
     @NotNull
     @Size(max = 50, min = 8)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Size(max = 250)
     private String biography;
+
+
+    private String profileImageUrl;
+
 
 }
