@@ -22,21 +22,12 @@ public class UpdateUserRequest {
     private String username;
 
     @NotNull
-    @Email
-    private String email;
-
-
-    @NotNull
     @NotBlank
     private String name;
 
     @NotNull
     @NotBlank
     private String surname;
-
-    @NotNull
-    @Size(max = 50, min = 8)
-    private String password;
 
     @Size(max = 250)
     private String biography;
