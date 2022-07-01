@@ -40,7 +40,7 @@ public class UserController {
         return ResponseEntity.ok(mapper.map(userService.getUserById(id), UserDTO.class));
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("/username/{username}")
     public ResponseEntity<?> getUserById(@PathVariable String username) {
         return ResponseEntity.ok(mapper.map(userService.getUserByUsername(username), UserDTO.class));
     }
