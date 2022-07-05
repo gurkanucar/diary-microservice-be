@@ -31,13 +31,7 @@ public class UserService {
     }
 
     protected boolean isUserContains(final List<LikeModel> list, final String username) {
-
-        log.info("search: " + username);
-
-        var result = list.stream().anyMatch(o -> o.getUser().getUsername().equals(username));
-        log.info("result: " + result);
-
-        return result;
+        return list.stream().anyMatch(o -> o.getUser().getUsername().equals(username));
     }
 
 
