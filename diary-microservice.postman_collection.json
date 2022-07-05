@@ -66,12 +66,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8082/user/all",
+									"raw": "http://localhost:8081/user/all",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8082",
+									"port": "8081",
 									"path": [
 										"user",
 										"all"
@@ -273,12 +273,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/post/like",
+							"raw": "http://localhost:8082/post/like",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"post",
 								"like"
@@ -293,12 +293,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/post",
+							"raw": "http://localhost:8082/post",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"post"
 							]
@@ -321,12 +321,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/post/like",
+							"raw": "http://localhost:8082/post/like",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"post",
 								"like"
@@ -350,12 +350,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/post/comment",
+							"raw": "http://localhost:8082/post/comment",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"post",
 								"comment"
@@ -379,12 +379,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/post/comment",
+							"raw": "http://localhost:8082/post/comment",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"post",
 								"comment"
@@ -399,12 +399,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/post/62c1ec7131872d7008263514",
+							"raw": "http://localhost:8082/post/62c1ec7131872d7008263514",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"post",
 								"62c1ec7131872d7008263514"
@@ -419,12 +419,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/user/grkn",
+							"raw": "http://localhost:8082/user/grkn",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"user",
 								"grkn"
@@ -448,12 +448,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/post",
+							"raw": "http://localhost:8082/post",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"post"
 							]
@@ -468,13 +468,13 @@
 		"type": "basic",
 		"basic": [
 			{
-				"key": "password",
-				"value": "pass",
+				"key": "username",
+				"value": "user",
 				"type": "string"
 			},
 			{
-				"key": "username",
-				"value": "user",
+				"key": "password",
+				"value": "pass",
 				"type": "string"
 			}
 		]
