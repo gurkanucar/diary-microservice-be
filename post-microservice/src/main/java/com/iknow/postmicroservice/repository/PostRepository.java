@@ -4,9 +4,11 @@ import com.iknow.postmicroservice.model.post.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface PostRepository extends MongoRepository< Post, String> {
+import java.util.Optional;
 
-    @Override
-    <S extends Post> S save(S entity);
+@Repository
+public interface PostRepository extends MongoRepository<Post, String> {
+
+    Optional<Post> findPostById(String id);
+
 }
