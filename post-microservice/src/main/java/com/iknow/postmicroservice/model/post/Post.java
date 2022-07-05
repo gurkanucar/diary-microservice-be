@@ -27,4 +27,5 @@ public class Post {
     private List<LikeModel> likes;
     private List<Comment> comments;
     private LocalDateTime created;
+    private String imageUrl;
 }
