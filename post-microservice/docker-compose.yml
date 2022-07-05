@@ -20,7 +20,7 @@ services:
     environment:
       - ME_CONFIG_MONGODB_SERVER=mongodb
     ports:
-      - '8090:8090'
+      - '8090:8081'
     restart: always
     volumes:
       - ./data:/data/db
