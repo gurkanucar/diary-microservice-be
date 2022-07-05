@@ -1,6 +1,7 @@
 package com.iknow.postmicroservice.model.post;
 
 import com.iknow.postmicroservice.model.Comment;
+import com.iknow.postmicroservice.model.LikeModel;
 import com.iknow.postmicroservice.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,7 +24,7 @@ public class Post {
     private String id;
     private String content;
     private User user;
-    private List<User> likedUsers;
+    private List<LikeModel> likes;
     private List<Comment> comments;
     private LocalDateTime created;
 }
