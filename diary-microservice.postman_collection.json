@@ -14,16 +14,6 @@
 						{
 							"name": "grantRole",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXJrYW4iLCJyb2xlcyI6WyJBRE1JTiJdLCJpc3MiOiJndWNhcmRldiIsImV4cCI6MTY0OTc2NzgxNCwiaWF0IjoxNjQ5NzEwODAwfQ.nCAOMI0INcLKC1A0KREbKfXFEaW5-IRlAz-mfnA6pnc",
-											"type": "string"
-										}
-									]
-								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -53,21 +43,6 @@
 						{
 							"name": "get user by id",
 							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "pass",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "user",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -88,30 +63,15 @@
 						{
 							"name": "get all users",
 							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "pass",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "user",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/user/all",
+									"raw": "http://localhost:8082/user/all",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8081",
+									"port": "8082",
 									"path": [
 										"user",
 										"all"
@@ -123,21 +83,6 @@
 						{
 							"name": "get user by username",
 							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "pass",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "user",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -159,21 +104,6 @@
 						{
 							"name": "update user",
 							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "pass",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "user",
-											"type": "string"
-										}
-									]
-								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -202,21 +132,6 @@
 						{
 							"name": "delete user by username",
 							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "pass",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "user",
-											"type": "string"
-										}
-									]
-								},
 								"method": "DELETE",
 								"header": [],
 								"url": {
@@ -237,16 +152,6 @@
 						{
 							"name": "revokeRole",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXJrYW4iLCJyb2xlcyI6WyJBRE1JTiJdLCJpc3MiOiJndWNhcmRldiIsImV4cCI6MTY0OTc2NzgxNCwiaWF0IjoxNjQ5NzEwODAwfQ.nCAOMI0INcLKC1A0KREbKfXFEaW5-IRlAz-mfnA6pnc",
-											"type": "string"
-										}
-									]
-								},
 								"method": "DELETE",
 								"header": [],
 								"body": {
@@ -356,21 +261,6 @@
 				{
 					"name": "add like",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "pass",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "user",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -419,21 +309,6 @@
 				{
 					"name": "remove like",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "pass",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "user",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -463,21 +338,6 @@
 				{
 					"name": "remove comment",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "pass",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "user",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -507,21 +367,6 @@
 				{
 					"name": "create comment",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "pass",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "user",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -551,21 +396,6 @@
 				{
 					"name": "get by id",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "pass",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "user",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -586,21 +416,6 @@
 				{
 					"name": "get user by username",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "pass",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "user",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -621,21 +436,6 @@
 				{
 					"name": "create post",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "pass",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "user",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
