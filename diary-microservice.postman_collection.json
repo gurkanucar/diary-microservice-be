@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3b60daf2-4d24-46db-9a24-c96a0530e9d7",
+		"_postman_id": "5ed82e41-14c6-48e7-b5b3-0dadb5f90c58",
 		"name": "diary-microservice",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -26,10 +26,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8081/user/role",
+									"raw": "http://{{BASE_URL}}:8081/user/role",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -46,10 +46,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/user/1",
+									"raw": "http://{{BASE_URL}}:8081/user/1",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -66,10 +66,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/user/all",
+									"raw": "http://{{BASE_URL}}:8081/user/all",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -86,10 +86,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/user/username/gurkan",
+									"raw": "http://{{BASE_URL}}:8081/user/username/gurkan",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -116,10 +116,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8081/user",
+									"raw": "http://{{BASE_URL}}:8081/user",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -135,10 +135,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/user/gurkan",
+									"raw": "http://{{BASE_URL}}:8081/user/gurkan",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -164,10 +164,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8081/user/role",
+									"raw": "http://{{BASE_URL}}:8081/user/role",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -199,10 +199,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/role/all",
+									"raw": "http://{{BASE_URL}}:8081/role/all",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -238,10 +238,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8081/role",
+									"raw": "http://{{BASE_URL}}:8081/role",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{BASE_URL}}"
 									],
 									"port": "8081",
 									"path": [
@@ -273,10 +273,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/post/like",
+							"raw": "http://{{BASE_URL}}:8082/post/like",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -293,10 +293,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/post",
+							"raw": "http://{{BASE_URL}}:8082/post",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -321,10 +321,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/post/like",
+							"raw": "http://{{BASE_URL}}:8082/post/like",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -350,10 +350,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/post/comment",
+							"raw": "http://{{BASE_URL}}:8082/post/comment",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -379,10 +379,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/post/comment",
+							"raw": "http://{{BASE_URL}}:8082/post/comment",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -399,10 +399,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/post/62c1ec7131872d7008263514",
+							"raw": "http://{{BASE_URL}}:8082/post/62c1ec7131872d7008263514",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -419,10 +419,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/user/grkn",
+							"raw": "http://{{BASE_URL}}:8082/user/grkn",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -448,10 +448,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/post",
+							"raw": "http://{{BASE_URL}}:8082/post",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8082",
 							"path": [
@@ -497,6 +497,18 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "192.168.1.75",
+			"disabled": true
+		},
+		{
+			"key": "BASE_URL",
+			"value": "localhost",
+			"type": "default"
 		}
 	]
 }
