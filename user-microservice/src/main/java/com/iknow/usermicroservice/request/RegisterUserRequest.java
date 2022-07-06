@@ -18,9 +18,6 @@ import javax.validation.constraints.Size;
 @Builder
 public class RegisterUserRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @Column(unique = true)
     @Size(max = 50, min = 3)

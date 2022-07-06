@@ -2,6 +2,7 @@ package com.iknow.usermicroservice.controller;
 
 import com.iknow.usermicroservice.dto.UserDTO;
 import com.iknow.usermicroservice.model.User;
+import com.iknow.usermicroservice.request.RegisterUserRequest;
 import com.iknow.usermicroservice.request.RoleGrantRevokeRequest;
 import com.iknow.usermicroservice.request.UpdateUserRequest;
 import com.iknow.usermicroservice.service.UserService;
@@ -43,6 +44,12 @@ public class UserController {
     @GetMapping("/username/{username}")
     public ResponseEntity<?> getUserById(@PathVariable String username) {
         return ResponseEntity.ok(mapper.map(userService.getUserByUsername(username), UserDTO.class));
+    }
+
+    @PostMapping
+    public ResponseEntity<?> createUser(@Valid @RequestBody RegisterUserRequest user) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.registerUser(user));
     }
 
     @PutMapping

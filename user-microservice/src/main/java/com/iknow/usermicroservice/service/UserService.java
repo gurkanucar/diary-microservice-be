@@ -48,13 +48,16 @@ public class UserService {
         if (userRepository.findUserByEmail(userRequest.getEmail()).isPresent()) {
             throw new GeneralException("email exists", HttpStatus.CONFLICT);
         }
+
         User user = mapper.map(userRequest, User.class);
+        user.getRoles().add(roleService.getRoleByName("USER"));
         return userRepository.save(user);
     }
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
 
     public User updateUser(User user) {
         var existingUser = getUserByUsername(user.getUsername());
