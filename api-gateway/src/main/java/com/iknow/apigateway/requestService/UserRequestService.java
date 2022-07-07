@@ -1,8 +1,10 @@
 package com.iknow.apigateway.requestService;
 
 
+import com.iknow.apigateway.model.User;
+import com.iknow.apigateway.requestModel.RegisterUserRequest;
+import com.iknow.apigateway.requestModel.UpdateUserRequest;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,28 +14,31 @@ import java.util.List;
         //url = "http://localhost:8081",
         url = "${user-microservice.url}",
         configuration = FeignConfiguration.class)
-public interface UserService {
+public interface UserRequestService {
 
     @GetMapping("/all")
-    List<Object> getAllUsers();
+    List<User> getAllUsers();
 
     @GetMapping("/{id}")
-    Object getUserByID(@PathVariable Long id);
+    User getUserByID(@PathVariable Long id);
 
     @GetMapping("/username/{username}")
-    Object getUserByUsername(@PathVariable String username);
+    User getUserByUsername(@PathVariable String username);
 
     @PutMapping
-    Object updateUser(@RequestBody Object requestBody);
+    User updateUser(@RequestBody UpdateUserRequest requestBody);
+
+    @PostMapping
+    User createUser(@RequestBody RegisterUserRequest requestBody);
 
     @DeleteMapping("/user/{username}")
     void deleteUserByUsername(@PathVariable String username);
 
     @PutMapping("/role")
-    Object grantRole(@RequestBody Object request);
+    User grantRole(@RequestBody Object request);
 
     @DeleteMapping("/role")
-    Object revokeRole(@RequestBody Object request);
+    User revokeRole(@RequestBody Object request);
 
 
 }
