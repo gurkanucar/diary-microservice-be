@@ -6,10 +6,10 @@ import com.iknow.usermicroservice.model.Role;
 import com.iknow.usermicroservice.model.User;
 import com.iknow.usermicroservice.repository.UserRepository;
 import com.iknow.usermicroservice.request.RegisterUserRequest;
-import com.iknow.usermicroservice.request.UpdateUserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,11 +21,15 @@ public class UserService {
     private final UserRepository userRepository;
     private final ModelMapper mapper;
     private final RoleService roleService;
+    private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, ModelMapper mapper, RoleService roleService) {
+    public UserService(UserRepository userRepository, ModelMapper mapper,
+                       RoleService roleService,
+                       BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.roleService = roleService;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -40,7 +44,9 @@ public class UserService {
                 .orElseThrow(() -> new GeneralException("User not found by id!", 404));
     }
 
-    public User registerUser(RegisterUserRequest userRequest) {
+    public User createUser(RegisterUserRequest userRequest) {
+
+
         if (userRepository.findUserByUsername(userRequest.getUsername()).isPresent()) {
             throw new GeneralException("User already exists", HttpStatus.CONFLICT);
         }
@@ -49,8 +55,12 @@ public class UserService {
             throw new GeneralException("email exists", HttpStatus.CONFLICT);
         }
 
+
         User user = mapper.map(userRequest, User.class);
-        user.getRoles().add(roleService.getRoleByName("USER"));
+
+        var userRole = roleService.getRoleByName(ROLES.USER.toString());
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRoles(List.of(userRole));
         return userRepository.save(user);
     }
 

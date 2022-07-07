@@ -41,7 +41,6 @@ public class RegisterUserRequest {
     @NotEmpty
     @NotNull
     @Size(max = 50, min = 8)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Size(max = 250)

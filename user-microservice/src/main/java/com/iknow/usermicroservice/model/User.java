@@ -43,7 +43,6 @@ public class User implements Serializable {
     private String surname;
     @NotEmpty
     @Column(length = 60)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     @Size(max = 250)
     private String biography;

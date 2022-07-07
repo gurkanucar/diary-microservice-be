@@ -34,11 +34,11 @@ public class UserMicroserviceApplication implements CommandLineRunner {
         roleService.saveRole(Role.builder().name("USER").detail("simple operations").build());
         roleService.saveRole(Role.builder().name("ADMIN").detail("admin operations").build());
         roleService.saveRole(Role.builder().name("SUPERADMIN").detail("super operations").build());
-        User superadmin = userService.registerUser(RegisterUserRequest.builder().username("gurkan").email("g@mail.com").password("password").build());
-        userService.registerUser((RegisterUserRequest.builder().username("metin").email("m@mail.com").password("password").build()));
-        userService.registerUser((RegisterUserRequest.builder().username("ali").email("a@mail.com").password("password").build()));
-        userService.registerUser((RegisterUserRequest.builder().username("kartal").email("k@mail.com").password("password").build()));
-        User admin = userService.registerUser((RegisterUserRequest.builder().username("sezai").email("s@mail.com").password("password").build()));
+        User superadmin = userService.createUser(RegisterUserRequest.builder().username("gurkan").email("g@mail.com").password("password").build());
+        userService.createUser((RegisterUserRequest.builder().username("metin").email("m@mail.com").password("password").build()));
+        userService.createUser((RegisterUserRequest.builder().username("ali").email("a@mail.com").password("password").build()));
+        userService.createUser((RegisterUserRequest.builder().username("kartal").email("k@mail.com").password("password").build()));
+        User admin = userService.createUser((RegisterUserRequest.builder().username("sezai").email("s@mail.com").password("password").build()));
 
 
         var superAdminRole = roleService.getRoleByName(ROLES.SUPERADMIN.toString());

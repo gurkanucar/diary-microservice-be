@@ -22,6 +22,7 @@ public class UserDTO {
     private String biography;
     private LocalDate createdDate;
     private String profileImageUrl;
+    private String password;
     private boolean isActive;
     private List<RoleDTO> roles;
 

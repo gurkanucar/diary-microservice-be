@@ -49,7 +49,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<?> createUser(@Valid @RequestBody RegisterUserRequest user) {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(userService.registerUser(user));
+                .body(userService.createUser(user));
     }
 
     @PutMapping
