@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+
+
+# post microservice
+  mongodb:
+    image: 'mongo'
+    ports:
+      - 27017:27017
+    container_name: mongodb
+    volumes:
+      - ./data:/data/db
+    networks:
+      - shared-net
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    depends_on:
+      - mongodb
+    networks:
+      - shared-net
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    ports:
+      - '8090:8081'
+    restart: always
+    volumes:
+      - ./data:/data/db
+
+  post-microservice:
+    image: backend
+    build:
+      context: ./post-microservice/
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    restart: always
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    networks:
+      - shared-net
+
+#### user microservice
+
+  mysqldb:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: diary_mysql
+      MYSQL_PASSWORD: 1234
+    ports:
+      - 3307:3306
+
+  user-microservice:
+    image: user-microservice
+    build:
+      context: ./user-microservice
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
+    depends_on:
+      - mysqldb
+    restart: always
+
+
+networks:
+  shared-net:
+    driver: bridge
