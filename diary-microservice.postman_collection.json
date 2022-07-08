@@ -440,7 +440,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"content\": \"request posttttttt\",\r\n    \"imageUrl\":\"urllll\",\r\n        \"user\": {\r\n        \"username\": \"grkn\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"content\": \"request posttttttt\",\r\n    \"imageUrl\":\"urllll\",\r\n        \"user\": {\r\n        \"username\": \"gurkan\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -473,7 +473,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"grknn\",\r\n    \"password\":\"password\"\r\n}",
+							"raw": "{\r\n    \"username\":\"gurkan\",\r\n    \"password\":\"password\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -481,10 +481,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/auth/login",
+							"raw": "http://{{BASE_URL}}:8083/auth/login",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8083",
 							"path": [
@@ -506,7 +506,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJncmtubiIsInJvbGVzIjpbIlVTRVIiXSwiaXNzIjoiZ3VjYXJkZXYiLCJleHAiOjE2NTcxODQ3NzIsImlhdCI6MTY1NzE0MTIwMH0.hGRDLKh6aNg33jQpsDcais9ZbEihcf-pOpnBG1gCeYk",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXJrYW4iLCJyb2xlcyI6WyJVU0VSIl0sImlzcyI6Imd1Y2FyZGV2IiwiZXhwIjoxNjU3Mjg1ODMwLCJpYXQiOjE2NTcyMzg0MDB9.IUwOcNUeT8XMI9Vla-pjV4E6dw7w0IezknV7JZrxy78",
 									"type": "string"
 								}
 							]
@@ -523,10 +523,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/user/all",
+							"raw": "http://{{BASE_URL}}:8083/user/all",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8083",
 							"path": [
@@ -562,10 +562,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/auth/logout",
+							"raw": "http://{{BASE_URL}}:8083/auth/logout",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8083",
 							"path": [
@@ -594,10 +594,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/auth/refresh",
+							"raw": "http://{{BASE_URL}}:8083/auth/refresh",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8083",
 							"path": [
@@ -623,10 +623,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/auth/register",
+							"raw": "http://{{BASE_URL}}:8083/auth/register",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "8083",
 							"path": [
@@ -678,13 +678,13 @@
 	"variable": [
 		{
 			"key": "BASE_URL",
-			"value": "192.168.1.75",
-			"disabled": true
+			"value": "192.168.1.75"
 		},
 		{
 			"key": "BASE_URL",
 			"value": "localhost",
-			"type": "default"
+			"type": "default",
+			"disabled": true
 		}
 	]
 }
