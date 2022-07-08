@@ -54,6 +54,9 @@ services:
       MYSQL_PASSWORD: 1234
     ports:
       - 3307:3306
+    networks:
+      - shared-net
+    
 
   user-microservice:
     image: user-microservice
@@ -65,7 +68,8 @@ services:
     depends_on:
       - mysqldb
     restart: always
-
+    networks:
+      - shared-net
 
 #### eureka-server
 
@@ -77,6 +81,9 @@ services:
     ports:
       - 8084:8084
     restart: always
+    networks:
+      - shared-net
+
 
 #### api-gateway
 
@@ -88,7 +95,8 @@ services:
     ports:
       - 8083:8083
     restart: always
-
+    networks:
+      - shared-net
 
 networks:
   shared-net:
