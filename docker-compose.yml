@@ -67,6 +67,18 @@ services:
     restart: always
 
 
+#### eureka-server
+
+  eureka-server:
+    image: eureka-server
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - 8084:8084
+    restart: always
+
+
 networks:
   shared-net:
     driver: bridge
