@@ -78,6 +78,17 @@ services:
       - 8084:8084
     restart: always
 
+#### api-gateway
+
+  api-gateway:
+    image: api-gateway
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - 8083:8083
+    restart: always
+
 
 networks:
   shared-net:
