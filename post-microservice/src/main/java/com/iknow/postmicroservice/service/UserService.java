@@ -3,7 +3,7 @@ package com.iknow.postmicroservice.service;
 
 import com.iknow.postmicroservice.model.LikeModel;
 import com.iknow.postmicroservice.model.User;
-import com.iknow.postmicroservice.repository.UserRepository;
+import com.iknow.postmicroservice.requestService.UserRequestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -13,21 +13,20 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final UserRequestService userRequestService;
 
-
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserService(UserRequestService userRequestService) {
+        this.userRequestService = userRequestService;
     }
 
     public User getUserByUsername(String username) {
-        return userRepository.findUserByUsername(username)
-                .orElseThrow(() -> new RuntimeException("user not found!"));
+        return userRequestService.getUserByUsername(username);
+        //.orElseThrow(() -> new RuntimeException("user not found!"));
     }
 
-    public User getUserById(String id) {
-        return userRepository.findUserById(id)
-                .orElseThrow(() -> new RuntimeException("user not found!"));
+    public User getUserById(Long id) {
+        return userRequestService.getUserByID(id);
+        // .orElseThrow(() -> new RuntimeException("user not found!"));
     }
 
     protected boolean isUserContains(final List<LikeModel> list, final String username) {

@@ -13,12 +13,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document
 public class User {
-    @Id
-    private String id;
+    private Long id;
 
-    @Indexed(unique = true)
     private String username;
     private String profileImageUrl;
     private String name;
