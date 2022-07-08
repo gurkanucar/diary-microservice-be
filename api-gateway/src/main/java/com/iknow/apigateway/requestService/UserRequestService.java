@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(value = "course-service",
+@FeignClient(value = "user-microservice",
         path = "/user",
         //url = "http://localhost:8081",
         url = "${user-microservice.url}",
