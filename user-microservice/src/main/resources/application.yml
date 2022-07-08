@@ -27,13 +27,12 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: false
 
+
 logging:
   level:
     org.springframework.web: debug
 
-eureka:
-  client:
-    enabled: false
+
 
 security:
   username: user
