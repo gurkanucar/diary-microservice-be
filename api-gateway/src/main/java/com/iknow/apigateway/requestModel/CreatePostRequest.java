@@ -1,8 +1,8 @@
 package com.iknow.apigateway.requestModel;
 
 
-import com.iknow.postmicroservice.model.User;
-import com.iknow.postmicroservice.model.post.PostType;
+import com.iknow.apigateway.model.User;
+import com.iknow.apigateway.model.post.PostType;
 import lombok.Data;
 
 @Data
