@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(value = "api-gateway",
+@FeignClient(value = "user-microservice",
         path = "/user",
         //url = "http://localhost:8081",
         //  url = "${user-microservice.url}",
