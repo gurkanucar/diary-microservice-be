@@ -73,5 +73,11 @@ public class PostController {
         return ResponseEntity.ok(postService.removeLike(likeRequest));
     }
 
+    @PatchMapping("/status/{id}")
+    public ResponseEntity<Post> changeStatus(@PathVariable String id) {
+        return ResponseEntity.ok(postService.changeStatus(id));
+    }
+
+
 
 }

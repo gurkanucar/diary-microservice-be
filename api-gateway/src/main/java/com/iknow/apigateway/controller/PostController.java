@@ -64,4 +64,10 @@ public class PostController {
     }
 
 
+    @PatchMapping("/status/{id}")
+    public ResponseEntity<Post> changeStatus(@PathVariable String id) {
+        return ResponseEntity.ok(postRequestService.changeStatus(id));
+    }
+
+
 }

@@ -25,4 +25,5 @@ public class Post {
     private List<Comment> comments;
     private LocalDateTime created;
     private String imageUrl;
+    private boolean isPublic;
 }

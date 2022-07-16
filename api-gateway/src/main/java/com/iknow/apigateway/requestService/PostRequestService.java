@@ -30,6 +30,9 @@ public interface PostRequestService {
     @PostMapping("/comment")
     Post addComment(@RequestBody CommentRequest commentRequest);
 
+    @PatchMapping("/status/{id}")
+    Post changeStatus(@PathVariable String id);
+
     @DeleteMapping("/comment")
     Post removeComment(@RequestBody CommentRequest commentRequest);
 

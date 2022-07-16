@@ -126,5 +126,9 @@ public class PostService {
         return postRepository.save(post);
     }
 
-
+    public Post changeStatus(String id) {
+        Post post = getPostByID(id);
+        post.setPublic(!post.isPublic());
+        return postRepository.save(post);
+    }
 }

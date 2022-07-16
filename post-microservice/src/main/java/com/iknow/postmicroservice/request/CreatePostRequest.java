@@ -13,5 +13,5 @@ public class CreatePostRequest {
     private PostType type;
     private String imageUrl;
     private String videoUrl;
-
+    private boolean isPublic;
 }
