@@ -29,7 +29,7 @@ public class NotificationStorageController {
     }
 
     @PatchMapping("/read/{notifID}")
-    public ResponseEntity changeNotifStatusToRead(@PathVariable String notifID) {
+    public ResponseEntity<Notification> changeNotifStatusToRead(@PathVariable String notifID) {
         return ResponseEntity.ok(notifService.changeNotifStatusToRead(notifID));
     }
 
