@@ -24,7 +24,7 @@ public class NotificationStorageController {
     }
 
     @PostMapping
-    public ResponseEntity<Notification> getNotificationsByUserID(@RequestBody Notification notification) {
+    public ResponseEntity<Notification> createNotification(@RequestBody Notification notification) {
         return ResponseEntity.ok(notifService.createNotificationStorage(notification));
     }
 
