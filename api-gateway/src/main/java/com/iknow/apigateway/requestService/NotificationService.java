@@ -20,12 +20,12 @@ public interface NotificationService {
 
 
     @GetMapping("/notification/{userID}")
-    ResponseEntity<List<Notification>> getNotificationsByUserID(@PathVariable String userID);
+    List<Notification> getNotificationsByUserID(@PathVariable String userID);
 
     @PostMapping("/notification")
-    ResponseEntity<Notification> getNotificationsByUserID(@RequestBody Notification notification);
+    Notification createNotificationStorage(@RequestBody Notification notification);
 
     @PatchMapping("/notification/read/{notifID}")
-    ResponseEntity<Notification> changeNotifStatusToRead(@PathVariable String notifID);
+    Notification changeNotifStatusToRead(@PathVariable String notifID);
 
 }
