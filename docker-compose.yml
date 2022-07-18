@@ -98,6 +98,21 @@ services:
     networks:
       - shared-net
 
+
+#### notification-microservice
+
+  notification-microservice:
+    image: notification-microservice
+    build:
+      context: ./notification-microservice
+      dockerfile: Dockerfile
+    ports:
+      - 8086:8086
+    restart: always
+    networks:
+      - shared-net
+
+
 networks:
   shared-net:
     driver: bridge
