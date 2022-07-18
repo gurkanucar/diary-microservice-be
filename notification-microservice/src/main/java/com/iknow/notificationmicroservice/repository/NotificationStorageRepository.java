@@ -14,8 +14,6 @@ public interface NotificationStorageRepository extends MongoRepository<Notificat
 
     List<Notification> findByUserToId(String id);
 
-
     List<Notification> findByUserToIdAndDeliveredFalse(String id);
-
 
 }
