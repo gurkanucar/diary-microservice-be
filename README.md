@@ -1,7 +1,7 @@
 # Diary Microservice
 
 
-### Services
+### Micro Services
 
 **user microservice:** user operations
 
@@ -36,7 +36,7 @@
 ```
 
 
-#### Sending Postman Requests
+### Sending Postman Requests
 
 You have to send every request to api gateway. Api gateway will work on 8083.
 
@@ -44,3 +44,6 @@ Base URL: http://localhost:8083
 
 Collection: https://gitlab.com/iknow-tech/diary-microservice-be/-/blob/master/diary-microservice-apigateway.postman_collection.json
 
+#### Note That!
+
+You have to login first, then you will get an access token. You must put this token to header as Bearer token.
