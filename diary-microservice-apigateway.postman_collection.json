@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "40aae67b-6aea-424d-a231-52df902e63e1",
+		"name": "diary-microservice-apigateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user operations",
+					"item": [
+						{
+							"name": "grantRole",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"gurkan\",\r\n    \"role\":\"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/user/role",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"user",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/user/1",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/user/all",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"user",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user by username",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/user/username/gurkan",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"user",
+										"username",
+										"gurkan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update user",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"gurkan\",\r\n    \"email\":\"updated e-mail\",\r\n    \"name\":\"updated name\",\r\n    \"surname\":\"updated surname\",\r\n    \"biography\":\"bio new\",\r\n    \"profileImageUrl\":\"new img\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/user",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete user by username",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/user/gurkan",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"user",
+										"gurkan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "revokeRole",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"gurkan\",\r\n    \"role\":\"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/user/role",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"user",
+										"role"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login register",
+					"item": [
+						{
+							"name": "refresh token",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"dbcb0c261dc34696af752fc1063c935a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/auth/refresh",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"grknn\",\r\n    \"email\":\"grknn@ucar.com\",\r\n    \"name\":\"Gurkan\",\r\n    \"surname\":\"UCAR\",\r\n    \"password\":\"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/auth/register",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login [USER 1]",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"gurkan\",\r\n    \"password\":\"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/auth/login",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{BASE_URL}}:8083/auth/logout",
+									"protocol": "http",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"port": "8083",
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "add like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"likeModel\": {\r\n        \"user\": {\r\n            \"username\": \"gurkan\"\r\n        }\r\n    },\r\n    \"post\": {\r\n        \"id\": \"62d6655d0b82c80a3a20abea\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/post/like",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"post",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/post",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove like",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"username\": \"gurkan\"\r\n    },\r\n    \"post\": {\r\n        \"id\": \"62c200dde16b936f2842d6fa\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/post/like",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"post",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": {\r\n        \"user\": {\r\n            \"username\": \"gurkan\"\r\n        },\r\n        \"content\": \"request commentt\"\r\n    },\r\n    \"post\": {\r\n        \"id\": \"62c1f1497762b418c41e44f1\",\r\n        \"user\": {\r\n            \"username\": \"gurkan\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/post/comment",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"post",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"username\": \"gurkan\"\r\n    },\r\n    \"post\": {\r\n        \"id\": \"62c1f1497762b418c41e44f1\",\r\n        \"user\": {\r\n            \"username\": \"gurkan\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/post/comment",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"post",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/post/62d6655d0b82c80a3a20abea",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"post",
+								"62d6655d0b82c80a3a20abea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/user/grkn",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"user",
+								"grkn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"request posttttttt\",\r\n    \"imageUrl\":\"urllll\",\r\n        \"user\": {\r\n        \"username\": \"gurkan\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}:8083/post",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "8083",
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXJrYW4iLCJyb2xlcyI6WyJVU0VSIl0sImlzcyI6Imd1Y2FyZGV2IiwiZXhwIjoxNjU4MjE4Nzc2LCJpYXQiOjE2NTgxODg4MDB9.2i0tqXAtINYEBzHBeCN49aFr3p_wtXSWr29pFWMA0j8",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "localhost",
+			"type": "default",
+			"disabled": true
+		},
+		{
+			"key": "BASE_URL",
+			"value": "192.168.1.75",
+			"type": "default"
+		}
+	]
+}
