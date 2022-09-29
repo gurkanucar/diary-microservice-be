@@ -6,6 +6,10 @@ services:
     ports:
       - 27017:27017
     container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+
     volumes:
       - ./data:/data/db
     networks:
@@ -19,6 +23,8 @@ services:
       - shared-net
     environment:
       - ME_CONFIG_MONGODB_SERVER=mongodb
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=1234
     ports:
       - '8090:8081'
     restart: always

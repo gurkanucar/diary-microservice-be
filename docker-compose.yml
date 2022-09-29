@@ -112,6 +112,14 @@ services:
     networks:
       - shared-net
 
+##### redis for cache
+
+  redisdb:
+    image: "redis"
+    ports:
+      - "6379:6379"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
 
 networks:
   shared-net:

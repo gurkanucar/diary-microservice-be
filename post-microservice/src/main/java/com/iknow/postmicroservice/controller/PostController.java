@@ -1,23 +1,14 @@
 package com.iknow.postmicroservice.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iknow.postmicroservice.model.post.*;
-import com.iknow.postmicroservice.repository.PostRepository;
 import com.iknow.postmicroservice.request.CommentRequest;
-import com.iknow.postmicroservice.request.CreatePostRequest;
 import com.iknow.postmicroservice.request.LikeRequest;
+import com.iknow.postmicroservice.service.PostCacheService;
 import com.iknow.postmicroservice.service.PostService;
-import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.Conditions;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
@@ -25,10 +16,12 @@ import java.util.Map;
 public class PostController {
 
     private final PostService postService;
+    private final PostCacheService postCacheService;
 
 
-    public PostController(PostService postService) {
+    public PostController(PostService postService, PostCacheService postCacheService) {
         this.postService = postService;
+        this.postCacheService = postCacheService;
     }
 
 
@@ -78,6 +71,16 @@ public class PostController {
         return ResponseEntity.ok(postService.changeStatus(id));
     }
 
+
+    @GetMapping("/cache/get-all")
+    public ResponseEntity<List<PostCache>> getAll() {
+        return ResponseEntity.ok(postCacheService.getAll());
+    }
+
+    @PostMapping("/cache")
+    public ResponseEntity<PostCache> createPostCache(@RequestBody PostCache postCache) {
+        return ResponseEntity.ok(postCacheService.create(postCache));
+    }
 
 
 }
